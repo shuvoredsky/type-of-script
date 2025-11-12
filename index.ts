@@ -67,35 +67,49 @@
 
 // type HasBike = CheckGari<'bike'>
 
-const arrayOfNum: number[] = [1,4,6];
+// const arrayOfNum: number[] = [1,4,6];
 
-const arrayOfStringUsingMap: string[] = arrayOfNum.map((num)=>num.toString())
+// const arrayOfStringUsingMap: string[] = arrayOfNum.map((num)=>num.toString())
 
-console.log(arrayOfStringUsingMap)
+// console.log(arrayOfStringUsingMap)
 
-const user = {
-    id: 222
-}
-
-
-type AreaOfNum = {
-    height: number,
-    width: number,
-}
-
-type height = AreaOfNum['height']
-
-// type AreaOfString = {
-//    [key in 'height' | 'width']: string;
+// const user = {
+//     id: 222
 // }
 
-type Area<T> = {
-    // [key in keyof T]: T[key];
-    [key in keyof T]: number;
-}
 
-const area1: Area<{height: string; width: string}> = {
-    height: 50,
-    width: 40,
-}
+// type AreaOfNum = {
+//     height: number,
+//     width: number,
+// }
+
+// type height = AreaOfNum['height']
+
+// // type AreaOfString = {
+// //    [key in 'height' | 'width']: string;
+// // }
+
+// type Area<T> = {
+//     // [key in keyof T]: T[key];
+//     [key in keyof T]: number;
+// }
+
+// const area1: Area<{height: string; width: string}> = {
+//     height: 50,
+//     width: 40,
+// }
+
+
+type Product = {
+    id: number,
+    name: string,
+    price: string,
+    stock: number,
+    color?: string,
+};
+
+type ProductSummary = Pick<Product, 'id' | 'name' | 'price'>;
+
+
+
 
